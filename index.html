@@ -9,7 +9,6 @@
 <meta property="og:description" content="Kurátorovaný networking pro 30+. Workshop, catering, vybraná společnost. 23. 4. 2026 Ostrava. Kapacita 50 míst.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tvujclovek.netwalking.cz">
-<meta property="og:image" content="https://tvujclovek.netwalking.cz/og-image.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -20,20 +19,21 @@
     --dark: #1A1A14;
     --gold: #C4A35A;
     --white: #FFFFFF;
+    --serif: 'Source Serif 4', serif;
+    --sans: 'DM Sans', sans-serif;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--sans);
     background: var(--cream);
     color: var(--dark);
     overflow-x: hidden;
   }
 
-  /* HERO */
+  /* ========== HERO ========== */
   .hero {
     min-height: 100vh;
     background: var(--green);
@@ -46,24 +46,10 @@
   .hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 700px;
-    height: 700px;
+    top: -50%; right: -20%;
+    width: 700px; height: 700px;
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.08);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.05);
     pointer-events: none;
   }
 
@@ -79,57 +65,44 @@
   }
 
   .hero-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 4px; text-transform: uppercase;
     color: rgba(255,255,255,0.5);
     margin-bottom: 32px;
     animation: fadeUp 0.8s ease both;
   }
 
   .hero-title {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(64px, 12vw, 120px);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 0.9;
-    letter-spacing: -2px;
+    font-weight: 700; color: var(--white);
+    line-height: 0.9; letter-spacing: -2px;
     margin-bottom: 8px;
     animation: fadeUp 0.8s ease 0.1s both;
   }
 
   .hero-title-sub {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(64px, 12vw, 120px);
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 400; font-style: italic;
     color: var(--gold);
-    line-height: 0.9;
-    letter-spacing: -2px;
+    line-height: 0.9; letter-spacing: -2px;
     margin-bottom: 48px;
     animation: fadeUp 0.8s ease 0.2s both;
   }
 
   .hero-meta {
-    display: flex;
-    gap: 32px;
+    display: flex; gap: 32px;
     align-items: center;
     color: rgba(255,255,255,0.7);
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-size: 14px; font-weight: 300; letter-spacing: 1px;
     animation: fadeUp 0.8s ease 0.3s both;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap; justify-content: center;
   }
 
   .hero-meta-divider {
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    border-radius: 50%;
+    width: 4px; height: 4px;
+    background: var(--gold); border-radius: 50%;
   }
 
   .hero-cta {
@@ -140,111 +113,79 @@
   .hero-spots {
     margin-top: 16px;
     font-size: 13px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.45);
     animation: fadeUp 0.8s ease 0.5s both;
   }
 
   .btn-primary {
     display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
+    background: var(--gold); color: var(--dark);
     padding: 18px 48px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
     text-decoration: none;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
   }
 
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: rgba(255,255,255,0.15);
-    transition: left 0.3s ease;
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(196,163,90,0.4);
   }
-
-  .btn-primary:hover::before { left: 0; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(196,163,90,0.4); }
 
   .hero-scroll {
-    text-align: center;
-    padding: 32px;
+    text-align: center; padding: 32px;
     color: rgba(255,255,255,0.3);
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    animation: fadeUp 0.8s ease 0.6s both;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
   }
 
-  /* INTRO */
+  /* ========== INTRO ========== */
   .intro {
     padding: 100px 24px;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px; margin: 0 auto;
     text-align: center;
   }
 
-  .intro-eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--green);
-    font-weight: 500;
+  .eyebrow {
+    font-size: 11px; letter-spacing: 4px;
+    text-transform: uppercase; font-weight: 500;
     margin-bottom: 24px;
   }
 
   .intro-text {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(24px, 4vw, 36px);
-    line-height: 1.5;
-    color: var(--dark);
-    font-weight: 400;
+    line-height: 1.5; font-weight: 400;
   }
 
-  .intro-text em {
-    font-style: italic;
-    color: var(--green);
-  }
+  .intro-text em { font-style: italic; color: var(--green); }
 
-  .intro-divider {
-    width: 60px;
-    height: 2px;
+  .divider {
+    width: 60px; height: 2px;
     background: var(--gold);
     margin: 48px auto;
   }
 
   .intro-desc {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #555;
-    font-weight: 300;
+    font-size: 17px; line-height: 1.8;
+    color: #555; font-weight: 300;
   }
 
-  /* WHAT */
-  .what {
-    background: var(--dark);
-    padding: 100px 24px;
-  }
-
+  /* ========== GRID SECTIONS ========== */
   .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1100px; margin: 0 auto;
   }
 
   .section-label {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 48px;
-    display: block;
+    font-size: 11px; letter-spacing: 4px;
+    text-transform: uppercase; font-weight: 500;
+    margin-bottom: 48px; display: block;
+  }
+
+  /* ========== CO VÁS ČEKÁ ========== */
+  .what {
+    background: var(--dark);
+    padding: 100px 24px;
   }
 
   .what-grid {
@@ -257,103 +198,76 @@
     background: rgba(255,255,255,0.03);
     padding: 48px 40px;
     border: 1px solid rgba(255,255,255,0.06);
-    transition: all 0.3s ease;
+    transition: background 0.3s;
   }
 
   .what-item:hover {
-    background: rgba(4,106,56,0.2);
-    border-color: rgba(4,106,56,0.4);
+    background: rgba(4,106,56,0.15);
   }
 
   .what-number {
-    font-family: 'Source Serif 4', serif;
-    font-size: 48px;
-    color: rgba(255,255,255,0.08);
-    font-weight: 700;
-    line-height: 1;
+    font-family: var(--serif);
+    font-size: 48px; color: rgba(255,255,255,0.08);
+    font-weight: 700; line-height: 1;
     margin-bottom: 24px;
   }
 
   .what-title {
-    font-family: 'Source Serif 4', serif;
-    font-size: 22px;
-    color: var(--white);
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-family: var(--serif);
+    font-size: 22px; color: var(--white);
+    margin-bottom: 16px; font-weight: 700;
   }
 
   .what-desc {
-    font-size: 15px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.5);
-    font-weight: 300;
+    font-size: 15px; line-height: 1.7;
+    color: rgba(255,255,255,0.5); font-weight: 300;
   }
 
-  /* DEEP TALK */
+  /* ========== DEEP TALK ========== */
   .deeptalk {
     padding: 100px 24px;
     background: var(--green-pale);
   }
 
   .deeptalk-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1100px; margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    gap: 80px; align-items: center;
   }
 
   .deeptalk-tag {
     display: inline-block;
-    background: var(--green);
-    color: var(--white);
-    font-size: 10px;
-    letter-spacing: 3px;
+    background: var(--green); color: var(--white);
+    font-size: 10px; letter-spacing: 3px;
     text-transform: uppercase;
-    padding: 8px 16px;
-    margin-bottom: 24px;
+    padding: 8px 16px; margin-bottom: 24px;
   }
 
   .deeptalk-title {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(36px, 5vw, 52px);
-    color: var(--dark);
-    line-height: 1.1;
-    margin-bottom: 24px;
-    font-weight: 700;
+    line-height: 1.1; margin-bottom: 24px; font-weight: 700;
   }
 
   .deeptalk-desc {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
-    font-weight: 300;
-    margin-bottom: 32px;
+    font-size: 16px; line-height: 1.8;
+    color: #555; font-weight: 300; margin-bottom: 32px;
   }
 
   .deeptalk-points {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    display: flex; flex-direction: column; gap: 16px;
   }
 
   .deeptalk-points li {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    font-size: 15px;
-    color: var(--dark);
-    line-height: 1.6;
+    display: flex; gap: 16px; align-items: flex-start;
+    font-size: 15px; line-height: 1.6;
   }
 
   .deeptalk-points li::before {
-    content: '\2192';
-    color: var(--green);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 2px;
+    content: '→'; color: var(--green);
+    font-weight: 700; flex-shrink: 0; margin-top: 2px;
   }
 
   .deeptalk-visual {
@@ -364,103 +278,73 @@
 
   .deeptalk-visual::before {
     content: '\201C';
-    position: absolute;
-    top: 20px;
-    left: 32px;
-    font-family: 'Source Serif 4', serif;
-    font-size: 120px;
-    color: rgba(255,255,255,0.1);
-    line-height: 1;
+    position: absolute; top: 20px; left: 32px;
+    font-family: var(--serif);
+    font-size: 120px; color: rgba(255,255,255,0.1); line-height: 1;
   }
 
   .deeptalk-quote {
-    font-family: 'Source Serif 4', serif;
-    font-size: 22px;
-    color: var(--white);
-    line-height: 1.6;
-    font-style: italic;
-    position: relative;
-    z-index: 1;
+    font-family: var(--serif);
+    font-size: 22px; color: var(--white);
+    line-height: 1.6; font-style: italic;
+    position: relative; z-index: 1;
   }
 
-  /* PROGRAM */
-  .program {
-    padding: 100px 24px;
-    background: var(--cream);
-  }
+  /* ========== PROGRAM ========== */
+  .program { padding: 100px 24px; }
 
   .program-header {
-    max-width: 1100px;
-    margin: 0 auto 64px;
+    max-width: 1100px; margin: 0 auto 64px;
   }
 
   .program-title {
-    font-family: 'Source Serif 4', serif;
-    font-size: clamp(36px, 5vw, 52px);
-    color: var(--dark);
-    font-weight: 700;
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 52px); font-weight: 700;
   }
 
   .program-timeline {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    max-width: 1100px; margin: 0 auto;
   }
 
   .program-item {
     display: grid;
     grid-template-columns: 120px 1fr;
-    gap: 40px;
-    padding: 32px 0;
+    gap: 40px; padding: 32px 0;
     border-bottom: 1px solid rgba(0,0,0,0.08);
-    align-items: start;
   }
 
   .program-time {
-    font-family: 'Source Serif 4', serif;
-    font-size: 18px;
-    color: var(--green);
-    font-weight: 700;
+    font-family: var(--serif);
+    font-size: 18px; color: var(--green); font-weight: 700;
     padding-top: 4px;
   }
 
   .program-name {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--dark);
-    margin-bottom: 6px;
+    font-size: 18px; font-weight: 500; margin-bottom: 6px;
   }
 
   .program-detail {
-    font-size: 14px;
-    color: #888;
-    font-weight: 300;
-    line-height: 1.6;
+    font-size: 14px; color: #888; font-weight: 300; line-height: 1.6;
   }
 
-  /* PEOPLE */
+  /* ========== LIDÉ ========== */
   .people {
     padding: 100px 24px;
     background: var(--dark);
   }
 
   .people-header {
-    max-width: 1100px;
-    margin: 0 auto 64px;
+    max-width: 1100px; margin: 0 auto 64px;
   }
 
   .people-title {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(36px, 5vw, 52px);
-    color: var(--white);
-    font-weight: 700;
+    color: var(--white); font-weight: 700;
   }
 
   .people-grid {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1100px; margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2px;
@@ -473,63 +357,44 @@
   }
 
   .person-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: var(--green);
+    width: 120px; height: 120px;
+    border-radius: 50%; overflow: hidden;
     margin-bottom: 24px;
-    overflow: hidden;
     border: 2px solid rgba(196,163,90,0.3);
   }
 
   .person-avatar img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     object-position: center 20%;
   }
 
   .person-role {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: block;
+    font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 16px; display: block;
   }
 
   .person-name {
-    font-family: 'Source Serif 4', serif;
-    font-size: 26px;
-    color: var(--white);
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-family: var(--serif);
+    font-size: 26px; color: var(--white);
+    font-weight: 700; margin-bottom: 16px;
   }
 
   .person-desc {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.45);
-    font-weight: 300;
+    font-size: 14px; line-height: 1.7;
+    color: rgba(255,255,255,0.45); font-weight: 300;
   }
 
-  /* SOCIAL PROOF */
-  .proof {
-    padding: 100px 24px;
-    background: var(--cream);
-  }
+  /* ========== SOCIAL PROOF ========== */
+  .proof { padding: 100px 24px; }
 
-  .proof-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .proof-inner { max-width: 1100px; margin: 0 auto; }
 
   .proof-title {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(36px, 5vw, 52px);
-    color: var(--dark);
-    font-weight: 700;
-    margin-bottom: 64px;
+    font-weight: 700; margin-bottom: 64px;
   }
 
   .proof-grid {
@@ -547,306 +412,120 @@
 
   .proof-card::before {
     content: '\201C';
-    font-family: 'Source Serif 4', serif;
-    font-size: 80px;
-    color: var(--green-pale);
-    line-height: 1;
-    position: absolute;
-    top: 16px;
-    left: 24px;
+    font-family: var(--serif);
+    font-size: 80px; color: var(--green-pale);
+    line-height: 1; position: absolute;
+    top: 16px; left: 24px;
   }
 
   .proof-text {
-    font-family: 'Source Serif 4', serif;
-    font-size: 18px;
-    line-height: 1.6;
-    color: var(--dark);
-    font-style: italic;
-    margin-bottom: 24px;
-    position: relative;
-    z-index: 1;
+    font-family: var(--serif);
+    font-size: 18px; line-height: 1.6;
+    font-style: italic; margin-bottom: 24px;
+    position: relative; z-index: 1;
   }
 
   .proof-author {
-    font-size: 13px;
-    color: #888;
-    font-weight: 500;
+    font-size: 13px; color: #888;
   }
 
   .proof-author strong {
-    color: var(--dark);
-    display: block;
-    margin-bottom: 2px;
+    color: var(--dark); display: block; margin-bottom: 2px;
   }
 
-  /* TICKET */
+  /* ========== VSTUPNÉ ========== */
   .ticket {
     padding: 100px 24px;
     background: var(--green);
     text-align: center;
   }
 
-  .ticket-label {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 32px;
-    display: block;
-  }
-
   .ticket-price {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(72px, 15vw, 140px);
-    color: var(--white);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -4px;
+    color: var(--white); font-weight: 700;
+    line-height: 1; letter-spacing: -4px;
   }
 
   .ticket-currency {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(36px, 6vw, 60px);
-    color: var(--gold);
-    font-weight: 400;
+    color: var(--gold); font-weight: 400;
   }
 
   .ticket-note {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    margin: 16px 0 16px;
-    font-weight: 300;
+    font-size: 14px; color: rgba(255,255,255,0.5);
+    margin: 16px 0 16px; font-weight: 300;
   }
 
   .ticket-context {
-    font-size: 15px;
-    color: rgba(255,255,255,0.65);
-    max-width: 600px;
-    margin: 0 auto 48px;
-    line-height: 1.7;
-    font-style: italic;
+    font-size: 15px; color: rgba(255,255,255,0.65);
+    max-width: 600px; margin: 0 auto 48px;
+    line-height: 1.7; font-style: italic;
   }
 
   .ticket-includes {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    display: flex; justify-content: center;
+    gap: 40px; flex-wrap: wrap;
     margin-bottom: 64px;
   }
 
   .ticket-include {
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    display: flex; align-items: center; gap: 8px;
   }
 
   .ticket-include::before {
-    content: '\2713';
-    color: var(--gold);
-    font-weight: 700;
+    content: '✓'; color: var(--gold); font-weight: 700;
   }
 
   .ticket-capacity {
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
-    margin-top: 24px;
-    font-weight: 300;
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    margin-top: 24px; font-weight: 300;
   }
 
-  /* VENUE */
-  .venue {
-    padding: 100px 24px;
-    background: var(--cream);
-  }
+  /* ========== FORMULÁŘ ========== */
+  .form-section { padding: 100px 24px; }
 
-  .venue-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .venue-eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--green);
-    font-weight: 500;
-    margin-bottom: 24px;
-    display: block;
-  }
-
-  .venue-title {
-    font-family: 'Source Serif 4', serif;
-    font-size: clamp(32px, 4vw, 44px);
-    color: var(--dark);
-    font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-  }
-
-  .venue-address {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
-    font-weight: 300;
-    margin-bottom: 32px;
-  }
-
-  .venue-address strong {
-    color: var(--dark);
-    font-weight: 500;
-    display: block;
-  }
-
-  .venue-map {
-    height: 400px;
-    border: 1px solid rgba(4,106,56,0.15);
-    overflow: hidden;
-  }
-
-  .venue-map iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--dark);
-    padding: 48px 24px;
-    text-align: center;
-  }
-
-  .footer-brand {
-    font-family: 'Source Serif 4', serif;
-    font-size: 24px;
-    color: var(--white);
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .footer-sub {
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .footer-divider {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin: 24px auto;
-  }
-
-  .footer-contact {
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 16px;
-  }
-
-  .footer-contact a {
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-bottom: 24px;
-  }
-
-  .footer-social a {
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-    font-size: 13px;
-    transition: color 0.2s;
-  }
-
-  .footer-social a:hover {
-    color: var(--gold);
-  }
-
-  .footer-legal {
-    font-size: 11px;
-    color: rgba(255,255,255,0.2);
-    margin-top: 8px;
-  }
-
-  /* FORM */
-  .form-section {
-    padding: 100px 24px;
-    background: var(--cream);
-  }
-
-  .form-inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
+  .form-inner { max-width: 700px; margin: 0 auto; }
 
   .form-title {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--serif);
     font-size: clamp(36px, 5vw, 52px);
-    color: var(--dark);
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-weight: 700; margin-bottom: 16px;
   }
 
   .form-desc {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #555;
-    font-weight: 300;
-    margin-bottom: 48px;
+    font-size: 16px; line-height: 1.7;
+    color: #555; font-weight: 300; margin-bottom: 48px;
   }
 
   .reg-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: flex; flex-direction: column; gap: 20px;
   }
 
   .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
   }
 
   .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: flex; flex-direction: column; gap: 6px;
   }
 
-  .form-group.full {
-    grid-column: 1 / -1;
-  }
+  .form-group.full { grid-column: 1 / -1; }
 
   .form-group label {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--dark);
-    letter-spacing: 0.5px;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
   }
 
   .form-group input,
   .form-group select,
   .form-group textarea {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    padding: 14px 16px;
+    font-family: var(--sans);
+    font-size: 15px; padding: 14px 16px;
     border: 1px solid rgba(0,0,0,0.12);
-    background: var(--white);
-    color: var(--dark);
-    transition: border-color 0.2s;
-    outline: none;
+    background: var(--white); color: var(--dark);
+    transition: border-color 0.2s; outline: none;
   }
 
   .form-group input:focus,
@@ -855,109 +534,146 @@
     border-color: var(--green);
   }
 
-  .form-group textarea {
-    resize: vertical;
-  }
-
-  .gdpr-group {
-    margin-top: 8px;
-  }
+  .form-group textarea { resize: vertical; }
 
   .gdpr-label {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    cursor: pointer;
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
+    display: flex; gap: 12px; align-items: flex-start;
+    cursor: pointer; font-size: 14px; color: #555; line-height: 1.5;
   }
 
   .gdpr-label input[type="checkbox"] {
-    margin-top: 4px;
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
+    margin-top: 4px; flex-shrink: 0; width: 18px; height: 18px;
   }
 
   .btn-submit {
-    align-self: flex-start;
-    margin-top: 16px;
-    border: none;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
+    align-self: flex-start; margin-top: 16px;
+    border: none; cursor: pointer;
+    font-family: var(--sans);
   }
 
-  .btn-submit:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .form-message { font-size: 15px; margin-top: 12px; line-height: 1.5; }
+  .form-message.success { color: var(--green); font-weight: 500; }
+  .form-message.error { color: #c0392b; font-weight: 500; }
+
+  /* ========== MÍSTO KONÁNÍ ========== */
+  .venue { padding: 100px 24px; }
+
+  .venue-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
   }
 
-  .form-message {
-    font-size: 15px;
+  .venue-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 700; margin-bottom: 24px; line-height: 1.2;
+  }
+
+  .venue-address {
+    font-size: 16px; line-height: 1.8;
+    color: #555; font-weight: 300; margin-bottom: 32px;
+  }
+
+  .venue-address strong {
+    color: var(--dark); font-weight: 500; display: block;
+  }
+
+  .venue-map {
+    height: 400px; overflow: hidden;
+    border: 1px solid rgba(4,106,56,0.15);
+  }
+
+  .venue-map iframe {
+    width: 100%; height: 100%; border: 0;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--dark);
+    padding: 48px 24px; text-align: center;
+  }
+
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 24px; color: var(--white); font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .footer-sub {
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+
+  .footer-divider {
+    width: 40px; height: 1px;
+    background: var(--gold); margin: 24px auto;
+  }
+
+  .footer-social {
+    display: flex; justify-content: center; gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  .footer-social a {
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    font-size: 13px; transition: color 0.2s;
+  }
+
+  .footer-social a:hover { color: var(--gold); }
+
+  .footer-contact {
+    font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 16px;
+  }
+
+  .footer-contact a { color: var(--gold); text-decoration: none; }
+
+  .footer-legal {
+    font-size: 11px; color: rgba(255,255,255,0.2);
+  }
+
+  .footer-version {
+    font-size: 10px; color: rgba(255,255,255,0.15);
     margin-top: 12px;
-    line-height: 1.5;
   }
 
-  .form-message.success {
-    color: var(--green);
-    font-weight: 500;
-  }
-
-  .form-message.error {
-    color: #c0392b;
-    font-weight: 500;
-  }
-
-  /* STICKY CTA MOBILE */
+  /* ========== STICKY MOBILE CTA ========== */
   .sticky-cta {
     display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background: var(--green);
-    padding: 12px 24px;
-    text-align: center;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    z-index: 100; background: var(--green);
+    padding: 12px 24px; text-align: center;
     box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
   }
 
   .sticky-cta a {
     display: block;
-    background: var(--gold);
-    color: var(--dark);
+    background: var(--gold); color: var(--dark);
     padding: 14px 24px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
     text-decoration: none;
   }
 
+  /* ========== ANIMACE ========== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== RESPONSIVE ========== */
   @media (max-width: 768px) {
     .sticky-cta { display: block; }
     body { padding-bottom: 70px; }
     .form-row { grid-template-columns: 1fr; }
-    .deeptalk-inner,
-    .venue-inner {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    .program-item {
-      grid-template-columns: 80px 1fr;
-      gap: 16px;
-    }
+    .deeptalk-inner, .venue-inner { grid-template-columns: 1fr; gap: 40px; }
+    .program-item { grid-template-columns: 80px 1fr; gap: 16px; }
     .hero-meta { flex-direction: column; gap: 12px; }
     .hero-meta-divider { display: none; }
     .ticket-includes { flex-direction: column; align-items: center; gap: 16px; }
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
   }
 </style>
 </head>
@@ -977,30 +693,30 @@
       <span>Pro lidi 30+</span>
     </div>
     <div class="hero-cta">
-      <a href="#formular" class="btn-primary">Rezervovat místo &rarr;</a>
+      <a href="#formular" class="btn-primary">Rezervovat místo →</a>
     </div>
     <p class="hero-spots">Kapacita 50 míst · Každý účastník prochází výběrem</p>
   </div>
-  <div class="hero-scroll">&darr; &nbsp; Více informací</div>
+  <div class="hero-scroll">↓  Více informací</div>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
-  <p class="intro-eyebrow">O čem to je</p>
+  <p class="eyebrow" style="color: var(--green);">O čem to je</p>
   <p class="intro-text">
     Kdy jste naposledy poznali někoho, u koho jste si řekli — <em>tohohle člověka do svého života chci?</em>
   </p>
-  <div class="intro-divider"></div>
+  <div class="divider"></div>
   <p class="intro-desc">
     Ne kontakt. Ne konverzaci která vyšumí za týden. Ale člověka, s kým si sednete přirozeně — hodnotově, energeticky, životně.<br><br>
     TVŮJ ČLOVĚK je promyšlený večerní formát pro lidi 30+. Ne klasická seznamka. Ne klasický networking. Večer, kde může vzniknout něco skutečného.
   </p>
 </section>
 
-<!-- WHAT -->
+<!-- CO VÁS ČEKÁ -->
 <section class="what">
   <div class="section-inner">
-    <span class="section-label">Co vás čeká</span>
+    <span class="section-label" style="color: var(--gold);">Co vás čeká</span>
     <div class="what-grid">
       <div class="what-item">
         <div class="what-number">01</div>
@@ -1020,7 +736,7 @@
       <div class="what-item">
         <div class="what-number">04</div>
         <div class="what-title">Raut &amp; atmosféra</div>
-        <p class="what-desc">Prosecco na přivítaní, raut po celý večer, kvalitní víno. Přijdete a budete se cítit dobře — od první minuty.</p>
+        <p class="what-desc">Prosecco na přivítání, raut po celý večer, kvalitní víno. Přijdete a budete se cítit dobře — od první minuty.</p>
       </div>
       <div class="what-item">
         <div class="what-number">05</div>
@@ -1041,7 +757,7 @@
   <div class="deeptalk-inner">
     <div>
       <span class="deeptalk-tag">Workshop večera</span>
-      <h2 class="deeptalk-title">Co je<br>Deep Talk?</h2>
+      <h2 class="deeptalk-title">Co je Deep Talk?</h2>
       <p class="deeptalk-desc">
         Deep Talk je umění vést rozhovor, který druhého zaujme, zasáhne a zanechá stopu. Nejde o techniky. Jde o autentický kontakt.
       </p>
@@ -1062,7 +778,7 @@
 <section class="program">
   <div class="program-header">
     <span class="section-label" style="color: var(--green);">Program večera</span>
-    <h2 class="program-title">Jak večer<br>proběhne</h2>
+    <h2 class="program-title">Jak večer proběhne</h2>
   </div>
   <div class="program-timeline">
     <div class="program-item">
@@ -1103,27 +819,27 @@
   </div>
 </section>
 
-<!-- PEOPLE -->
+<!-- LIDÉ -->
 <section class="people">
   <div class="people-header">
-    <span class="section-label">Kdo za večerem stojí</span>
-    <h2 class="people-title">Váš večer<br>povedou</h2>
+    <span class="section-label" style="color: var(--gold);">Kdo za večerem stojí</span>
+    <h2 class="people-title">Váš večer povedou</h2>
   </div>
   <div class="people-grid">
     <div class="person-card">
-      <div class="person-avatar"><img src="jana-stepanikova.jpg" alt="Jana Štěpaníková"></div>
+      <div class="person-avatar"><img src="jana-stepanikova.jpg" alt="Mgr. Jana Štěpaníková, DiS."></div>
       <span class="person-role">Hostitelka &amp; autorka konceptu</span>
       <div class="person-name">Mgr. Jana Štěpaníková, DiS.</div>
       <p class="person-desc">Fyzioterapeutka, koučka a mentorka. Autorka metody WALANCE. Organizuje a moderuje celý večer.</p>
     </div>
     <div class="person-card">
-      <div class="person-avatar"><img src="jan-krkoska.jpg" alt="Jan Krkoška"></div>
+      <div class="person-avatar"><img src="jan-krkoska.jpg" alt="Jan Krkoška, MBA"></div>
       <span class="person-role">Partner &amp; hostitel místa</span>
       <div class="person-name">Jan Krkoška, MBA</div>
       <p class="person-desc">Úspěšný podnikatel a ředitel Centra následné péče Ostrava. Otevírá večer a vítá hosty ve svých prostorách.</p>
     </div>
     <div class="person-card">
-      <div class="person-avatar"><img src="jan-tobolik.jpg" alt="Jan Tobolík"></div>
+      <div class="person-avatar"><img src="jan-tobolik.jpg" alt="Ing. Jan Tobolík"></div>
       <span class="person-role">Host večera</span>
       <div class="person-name">Ing. Jan Tobolík</div>
       <p class="person-desc">AI konzultant a školitel s 1 000+ hodinami v AI. CEO Sensio.cz. Ukazuje, jak technologie mění byznys — a proč přesto potřebujeme skutečný lidský kontakt.</p>
@@ -1135,7 +851,7 @@
 <section class="proof">
   <div class="proof-inner">
     <span class="section-label" style="color: var(--green);">Co říkají účastníci</span>
-    <h2 class="proof-title">Ohlasy z našich<br>akcí</h2>
+    <h2 class="proof-title">Ohlasy z našich akcí</h2>
     <div class="proof-grid">
       <div class="proof-card">
         <p class="proof-text">Přišla jsem skeptická, odcházela s pocitem, že jsem konečně potkala lidi, se kterými si rozumím. Žádný povrchní small talk.</p>
@@ -1162,11 +878,11 @@
   </div>
 </section>
 
-<!-- TICKET -->
+<!-- VSTUPNÉ -->
 <section class="ticket" id="registrace">
-  <span class="ticket-label">Vstupné</span>
+  <span class="section-label" style="color: rgba(255,255,255,0.5);">Vstupné</span>
   <div class="ticket-price">1 700 <span class="ticket-currency">Kč</span></div>
-  <p class="ticket-note">Cena bez DPH &middot; Platba po schválení přihlášky</p>
+  <p class="ticket-note">Cena bez DPH · Platba po schválení přihlášky</p>
   <p class="ticket-context">Workshop, raut s nápoji, kurátorovaná společnost a celý večerní program — za méně, než stojí běžná večeře pro dva.</p>
   <div class="ticket-includes">
     <span class="ticket-include">Workshop Deep Talk</span>
@@ -1174,13 +890,11 @@
     <span class="ticket-include">Kurátorovaná skupina max. 50 lidí</span>
     <span class="ticket-include">Celý večerní program</span>
   </div>
-  <a href="#formular" class="btn-primary" style="background: var(--white); color: var(--dark);">
-    Rezervovat místo &rarr;
-  </a>
-  <p class="ticket-capacity">Kapacita je omezena na 50 míst &middot; Každý účastník prochází výběrem</p>
+  <a href="#formular" class="btn-primary" style="background: var(--white); color: var(--dark);">Rezervovat místo →</a>
+  <p class="ticket-capacity">Kapacita je omezena na 50 míst · Každý účastník prochází výběrem</p>
 </section>
 
-<!-- REGISTRATION FORM -->
+<!-- PŘIHLÁŠKA -->
 <section class="form-section" id="formular">
   <div class="form-inner">
     <span class="section-label" style="color: var(--green);">Přihláška</span>
@@ -1198,7 +912,6 @@
           <input type="text" id="prijmeni" name="prijmeni" required>
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label for="email">Email *</label>
@@ -1209,7 +922,6 @@
           <input type="tel" id="telefon" name="telefon" required>
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label for="mesto">Město bydliště *</label>
@@ -1220,7 +932,6 @@
           <input type="number" id="vek" name="vek" min="18" max="99" required>
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label for="pohlavi">Pohlaví *</label>
@@ -1235,17 +946,14 @@
           <input type="text" id="povolani" name="povolani" required>
         </div>
       </div>
-
       <div class="form-group full">
         <label for="cohleda">Co hledáte? (byznys parťák, přátelství, partner/ka na výlety…) *</label>
         <textarea id="cohleda" name="cohleda" rows="3" required></textarea>
       </div>
-
       <div class="form-group full">
         <label for="konicky">Vaše koníčky a zájmy *</label>
         <textarea id="konicky" name="konicky" rows="3" required></textarea>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label for="linkedin">LinkedIn profil</label>
@@ -1256,30 +964,27 @@
           <input type="text" id="instagram" name="instagram" placeholder="@vase_jmeno">
         </div>
       </div>
-
       <div class="form-group full">
         <label for="dieta">Dietní omezení (alergie, vegetarián…)</label>
         <input type="text" id="dieta" name="dieta">
       </div>
-
-      <div class="form-group full gdpr-group">
+      <div class="form-group full" style="margin-top: 8px;">
         <label class="gdpr-label">
           <input type="checkbox" id="gdpr" name="gdpr" required>
           <span>Souhlasím se zpracováním osobních údajů společností NetWalking Pro s.r.o. za účelem organizace akce TVŮJ ČLOVĚK. Údaje budou použity výhradně pro komunikaci ohledně akce a nebudou předány třetím stranám. Souhlas lze kdykoli odvolat na jana@walance.cz. *</span>
         </label>
       </div>
-
-      <button type="submit" class="btn-primary btn-submit">Odeslat přihlášku &rarr;</button>
+      <button type="submit" class="btn-primary btn-submit">Odeslat přihlášku →</button>
       <div id="form-message" class="form-message"></div>
     </form>
   </div>
 </section>
 
-<!-- VENUE -->
+<!-- MÍSTO KONÁNÍ -->
 <section class="venue">
   <div class="venue-inner">
     <div>
-      <span class="venue-eyebrow">Místo konání</span>
+      <span class="eyebrow" style="color: var(--green); display: block; margin-bottom: 24px;">Místo konání</span>
       <h2 class="venue-title">Restaurant Café<br>Ostrava-Poruba</h2>
       <p class="venue-address">
         <strong>Centrum následné péče Ostrava</strong>
@@ -1297,7 +1002,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">TVŮJ ČLOVĚK</div>
-  <div class="footer-sub">Jana Štěpaníková &middot; NetWalking Pro s.r.o.</div>
+  <div class="footer-sub">Jana Štěpaníková · NetWalking Pro s.r.o.</div>
   <div class="footer-divider"></div>
   <div class="footer-social">
     <a href="https://www.instagram.com/jana_stepanikova_walance/" target="_blank">Instagram</a>
@@ -1305,14 +1010,15 @@
     <a href="https://www.netwalking.cz" target="_blank">NetWalking.cz</a>
   </div>
   <div class="footer-contact">
-    Dotazy a přihlášky: <a href="mailto:jana@walance.cz">jana@walance.cz</a> &middot; <a href="tel:+420601584901">+420 601 584 901</a>
+    Dotazy a přihlášky: <a href="mailto:jana@walance.cz">jana@walance.cz</a> · <a href="tel:+420601584901">+420 601 584 901</a>
   </div>
-  <div class="footer-legal">NetWalking Pro s.r.o. &middot; IČO: 22107321 &middot; Na Hrázi 1139/13, 750 02 Přerov</div>
+  <div class="footer-legal">NetWalking Pro s.r.o. · IČO: 22107321 · Na Hrázi 1139/13, 750 02 Přerov</div>
+  <div class="footer-version">%%VERSION%%</div>
 </footer>
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <a href="#formular">Rezervovat místo &rarr;</a>
+  <a href="#formular">Rezervovat místo →</a>
 </div>
 
 <script>
@@ -1330,14 +1036,14 @@ function normalizeLinkedIn(val) {
 
 document.getElementById('registration-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const btn = this.querySelector('.btn-submit');
-  const msg = document.getElementById('form-message');
+  var btn = this.querySelector('.btn-submit');
+  var msg = document.getElementById('form-message');
   btn.disabled = true;
   btn.textContent = 'Odesílám…';
   msg.textContent = '';
   msg.className = 'form-message';
 
-  const data = {
+  var data = {
     jmeno: this.jmeno.value.trim(),
     prijmeni: this.prijmeni.value.trim(),
     email: this.email.value.trim(),
@@ -1355,8 +1061,7 @@ document.getElementById('registration-form').addEventListener('submit', async fu
   };
 
   try {
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw8XvtUXAoIW8RllLEq1BiCRudpGE0OFEYB7qGVypmLimsfChQgiW2iWbYm5SQoOiCXGg/exec';
-    const res = await fetch(SCRIPT_URL, {
+    var res = await fetch('https://script.google.com/macros/s/AKfycbw8XvtUXAoIW8RllLEq1BiCRudpGE0OFEYB7qGVypmLimsfChQgiW2iWbYm5SQoOiCXGg/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
@@ -1370,10 +1075,10 @@ document.getElementById('registration-form').addEventListener('submit', async fu
     msg.className = 'form-message error';
   }
   btn.disabled = false;
-  btn.innerHTML = 'Odeslat přihlášku &rarr;';
+  btn.innerHTML = 'Odeslat přihlášku →';
 });
 
-// Hide sticky CTA when form is visible
+// Hide sticky CTA when form visible
 var stickyCta = document.querySelector('.sticky-cta');
 var formSection = document.getElementById('formular');
 if (stickyCta && formSection) {

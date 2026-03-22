@@ -9,6 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate version
+        id: version
+        run: |
+          TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v2.0.0")
+          MAJOR=$(echo $TAG | sed 's/v//' | cut -d. -f1)
+          MINOR=$(echo $TAG | sed 's/v//' | cut -d. -f2)
+          PATCH=$(git rev-list ${TAG}..HEAD --count 2>/dev/null || echo "0")
+          VERSION="v${MAJOR}.${MINOR}.${PATCH}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+
+      - name: Inject version into HTML
+        run: sed -i "s/%%VERSION%%/${{ steps.version.outputs.version }}/g" index.html
 
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
@@ -19,7 +35,7 @@ jobs:
             set ssl:verify-certificate no;
             set ftp:passive-mode yes;
             open ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }};
-            mirror --reverse --delete --verbose --exclude .git/ --exclude .github/ --exclude apps-script/ --exclude google-apps-script.js --exclude .clasp.json . /;
+            mirror --reverse --delete --verbose --exclude .git/ --exclude .github/ --exclude apps-script/ --exclude .clasp.json --exclude index-v0.html --exclude index-v1.html --exclude index-v2.html --exclude TVUJ_CLOVEK_CRM_ULTIMATE.xlsx . /;
             quit
           "
 
