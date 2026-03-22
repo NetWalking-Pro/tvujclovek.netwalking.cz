@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Výběr smaragdové zelené — TVŮJ ČLOVĚK</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'DM Sans', sans-serif; background: #FAF8F3; margin: 0; padding: 40px 24px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 8px; }
+  p.sub { color: #888; margin-bottom: 48px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
+  .card { border: 2px solid rgba(0,0,0,0.06); overflow: hidden; }
+  .card-hero { padding: 48px 32px; text-align: center; color: #fff; }
+  .card-hero h2 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; margin: 0 0 4px; }
+  .card-hero h3 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; font-style: italic; color: #C4A35A; margin: 0 0 24px; }
+  .card-hero .meta { font-size: 13px; opacity: 0.7; }
+  .card-body { padding: 24px 32px; }
+  .card-body .name { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+  .card-body .hex { font-size: 14px; color: #888; margin-bottom: 16px; }
+  .swatch-row { display: flex; gap: 2px; height: 40px; margin-bottom: 16px; }
+  .swatch-row div { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 10px; color: rgba(255,255,255,0.8); }
+  .btn { display: inline-block; padding: 14px 36px; font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; }
+  .sample-section { padding: 32px; }
+  .sample-dark { color: #fff; }
+  .sample-dark h4 { font-family: 'Playfair Display', serif; font-size: 28px; margin: 0 0 8px; }
+  .sample-dark p { font-size: 14px; opacity: 0.6; line-height: 1.6; }
+  .sample-light { }
+  .sample-light h4 { font-family: 'Playfair Display', serif; font-size: 22px; margin: 0 0 8px; }
+  .sample-light p { font-size: 14px; color: #555; line-height: 1.6; }
+  .current { opacity: 0.5; position: relative; }
+  .current::after { content: 'AKTUÁLNÍ'; position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.3); color: #fff; font-size: 10px; padding: 4px 8px; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<h1>Výběr barvy — TVŮJ ČLOVĚK</h1>
+<p class="sub">Porovnání aktuální zelené vs. smaragdové varianty</p>
+
+<div class="grid">
+
+  <!-- CURRENT -->
+  <div class="card current">
+    <div class="card-hero" style="background: #2D5A27;">
+      <h2>TVŮJ</h2>
+      <h3>Člověk</h3>
+      <div class="meta">Ostrava · 23. dubna 2026 · 17:00–21:00</div>
+    </div>
+    <div class="swatch-row">
+      <div style="background:#2D5A27;">#2D5A27</div>
+      <div style="background:#4A7C42;">#4A7C42</div>
+      <div style="background:#E8F0E6; color:#2D5A27;">#E8F0E6</div>
+    </div>
+    <div class="card-body">
+      <div class="name">Aktuální — Lesní zelená</div>
+      <div class="hex">#2D5A27</div>
+      <a class="btn" style="background:#C4A35A; color:#1A1A14;">Mám zájem →</a>
+    </div>
+    <div class="sample-section sample-dark" style="background:#1A1A14;">
+      <h4 style="color:#C4A35A;">Co vás čeká</h4>
+      <p>Ukázka tmavé sekce s aktuální zelenou.</p>
+    </div>
+    <div class="sample-section sample-light" style="background:#E8F0E6;">
+      <h4 style="color:#2D5A27;">Deep Talk Workshop</h4>
+      <p>Ukázka světlé sekce s aktuální zelenou.</p>
+    </div>
+  </div>
+
+  <!-- A: Klasická smaragdová -->
+  <div class="card">
+    <div class="card-hero" style="background: #50C878;">
+      <h2>TVŮJ</h2>
+      <h3>Člověk</h3>
+      <div class="meta">Ostrava · 23. dubna 2026 · 17:00–21:00</div>
+    </div>
+    <div class="swatch-row">
+      <div style="background:#50C878;">#50C878</div>
+      <div style="background:#6FD99A;">#6FD99A</div>
+      <div style="background:#E6F7ED; color:#50C878;">#E6F7ED</div>
+    </div>
+    <div class="card-body">
+      <div class="name">A — Klasická smaragdová</div>
+      <div class="hex">#50C878</div>
+      <a class="btn" style="background:#C4A35A; color:#1A1A14;">Mám zájem →</a>
+    </div>
+    <div class="sample-section sample-dark" style="background:#1A1A14;">
+      <h4 style="color:#C4A35A;">Co vás čeká</h4>
+      <p>Svěží, výrazná, optimistická. Hodně energie.</p>
+    </div>
+    <div class="sample-section sample-light" style="background:#E6F7ED;">
+      <h4 style="color:#50C878;">Deep Talk Workshop</h4>
+      <p>Světlá sekce s klasickou smaragdovou.</p>
+    </div>
+  </div>
+
+  <!-- B: Tmavší smaragdová -->
+  <div class="card">
+    <div class="card-hero" style="background: #046A38;">
+      <h2>TVŮJ</h2>
+      <h3>Člověk</h3>
+      <div class="meta">Ostrava · 23. dubna 2026 · 17:00–21:00</div>
+    </div>
+    <div class="swatch-row">
+      <div style="background:#046A38;">#046A38</div>
+      <div style="background:#0D8A4F;">#0D8A4F</div>
+      <div style="background:#E3F2E9; color:#046A38;">#E3F2E9</div>
+    </div>
+    <div class="card-body">
+      <div class="name">B — Tmavá smaragdová</div>
+      <div class="hex">#046A38</div>
+      <a class="btn" style="background:#C4A35A; color:#1A1A14;">Mám zájem →</a>
+    </div>
+    <div class="sample-section sample-dark" style="background:#1A1A14;">
+      <h4 style="color:#C4A35A;">Co vás čeká</h4>
+      <p>Luxusní, elegantní, důvěryhodná. Blízko originálu.</p>
+    </div>
+    <div class="sample-section sample-light" style="background:#E3F2E9;">
+      <h4 style="color:#046A38;">Deep Talk Workshop</h4>
+      <p>Světlá sekce s tmavou smaragdovou.</p>
+    </div>
+  </div>
+
+  <!-- C: Pantone Emerald -->
+  <div class="card">
+    <div class="card-hero" style="background: #009B77;">
+      <h2>TVŮJ</h2>
+      <h3>Člověk</h3>
+      <div class="meta">Ostrava · 23. dubna 2026 · 17:00–21:00</div>
+    </div>
+    <div class="swatch-row">
+      <div style="background:#009B77;">#009B77</div>
+      <div style="background:#2BB89A;">#2BB89A</div>
+      <div style="background:#E0F5EF; color:#009B77;">#E0F5EF</div>
+    </div>
+    <div class="card-body">
+      <div class="name">C — Pantone Emerald</div>
+      <div class="hex">#009B77</div>
+      <a class="btn" style="background:#C4A35A; color:#1A1A14;">Mám zájem →</a>
+    </div>
+    <div class="sample-section sample-dark" style="background:#1A1A14;">
+      <h4 style="color:#C4A35A;">Co vás čeká</h4>
+      <p>Moderní, svěží s tyrkysovým nádechem. Trochu jiná.</p>
+    </div>
+    <div class="sample-section sample-light" style="background:#E0F5EF;">
+      <h4 style="color:#009B77;">Deep Talk Workshop</h4>
+      <p>Světlá sekce s Pantone smaragdovou.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
