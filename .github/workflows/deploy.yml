@@ -1,0 +1,21 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via lftp
+        run: |
+          lftp -e "
+            set ssl:verify-certificate no;
+            set ftp:passive-mode yes;
+            open ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }};
+            mirror --reverse --delete --verbose --exclude .git/ --exclude .github/ . /;
+            quit
+          "
